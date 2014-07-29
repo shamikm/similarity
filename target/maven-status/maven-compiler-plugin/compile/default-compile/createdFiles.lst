@@ -1,6 +1,0 @@
-org\maj\sm\StemmAnalyzer.class
-org\maj\sm\JaccardIndexBasedSimilarity.class
-org\maj\sm\KeywordGenetorUsingCustomAnalyzer.class
-org\maj\sm\KeywordGeneratorImpl.class
-org\maj\sm\KeywordGenerator.class
-org\maj\sm\SimilarityCalculator.class
