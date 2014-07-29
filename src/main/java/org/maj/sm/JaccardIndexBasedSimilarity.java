@@ -8,7 +8,7 @@ import java.util.Set;
  * @author shamik.majumdar
  */
 public class JaccardIndexBasedSimilarity implements SimilarityCalculator {
-    private final KeywordGenerator keywordGenerator = new KeywordGeneratorImpl();
+    private final KeywordGenerator keywordGenerator = new KeywordGenetorUsingCustomAnalyzer();
 
     @Override
     public double calculateSimilarity(String oneContent, String otherContet) {

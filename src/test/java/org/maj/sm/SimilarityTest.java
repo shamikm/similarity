@@ -20,6 +20,15 @@ public class SimilarityTest {
     }
 
     @Test
+    public void testUsingCustomAnalyzer(){
+        String content = "They Licked the platter clean";
+        KeywordGenerator kw = new KeywordGenetorUsingCustomAnalyzer();
+        Set<String> kws = kw.generateKeyWords(content);
+        Assert.assertEquals(kws.size(), 3);
+        Assert.assertEquals(kws, Sets.newHashSet("lick", "platter", "clean"));
+    }
+
+    @Test
     public void calculateSim(){
         SimilarityCalculator calculator = new JaccardIndexBasedSimilarity();
         Assert.assertEquals(calculator.calculateSimilarity("They Licked the platter clean","Jack Sprat could eat no fat"),0.0);
