@@ -48,28 +48,4 @@ public final class StemmAnalyzer extends Analyzer {
         return new PorterStemFilter(tok);
     }
 
-    public static void main(String... args){
-        StemmAnalyzer analyzer = new StemmAnalyzer(Version.LUCENE_36);
-        Set<String> keywords = new HashSet<>();
-        String content = "Little lamb";
-        TokenStream stream = analyzer.tokenStream("contents", new StringReader(content));
-        try {
-            stream.reset();
-            while(stream.incrementToken()) {
-                String kw = stream.getAttribute(CharTermAttribute.class).toString();
-                keywords.add(kw);
-            }
-        }catch(Exception ex) {
-
-        }finally {
-
-            try {
-                stream.end();
-                stream.close();
-            } catch (Exception e) {
-
-            }
-        }
-        System.out.println(keywords);
-    }
 }
